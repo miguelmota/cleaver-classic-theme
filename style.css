@@ -137,6 +137,14 @@ pre .chunk {
 
 /* Theme styles */
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #222;
@@ -148,7 +156,12 @@ body {
   position: absolute;
   top: 0; bottom: 0;
   left: 0; right: 0;
-  padding: 100px;
+}
+
+@media (max-width: 640px) {
+  .slide {
+    padding: 20px;
+  }
 }
 
 .slide-content {
@@ -156,11 +169,13 @@ body {
   height: 100%;
   overflow: hidden;
   margin: 0 auto;
-  padding: 0;
+  padding: 100px;
 
   font-weight: 200;
   font-size: 200%;
   line-height: 1.375;
+
+  overflow: scroll;
 }
 
 .slide-content img {
@@ -213,6 +228,14 @@ body {
 .next:hover {
   border-left-color: #888;
   cursor: pointer;
+}
+
+.arrow.next {
+  border-left-color: rgba(0,0,0,.05);
+}
+
+.arrow.prev {
+  border-right-color: rgba(0,0,0,.05);
 }
 
 h1 {
@@ -268,7 +291,7 @@ a:hover {
 }
 
 pre {
-  font-size: 60%;
+  font-size: 100%;
   line-height: 1.3;
 }
 
